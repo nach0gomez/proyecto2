@@ -15,25 +15,10 @@ menu.fill(FONDO)
 pygame.display.set_caption('TIC TAC TOE')
 ventana.fill( FONDO )
 
-startImg = pygame.image.load('start2.png').convert_alpha()
-stopImg = pygame.image.load('stop.png').convert_alpha()
-
-
 
 #! --- Clases ---
 
 
-class boton():
-    
-    def __init__(self, x, y, imagen):
-        self.imagen = imagen
-        self.rect = self.imagen.get_rect()
-        self.rect.topleft = (x,y)
-
-    def dibujar(self):
-        menu.blit(self.imagen, (self.rect.x, self.rect.y))
-        
-        
 
 class tabla:
 
@@ -320,10 +305,6 @@ def main():
     juego = Juego()
     tabla = juego.tabla
     ia = juego.ia
-    botonInicio = boton(0,000,startImg)
-    botonStop = boton(550,200,stopImg)
-    botonInicio.dibujar()
-    botonStop.dibujar()
 
 
     #! --- mainloop ---
