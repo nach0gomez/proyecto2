@@ -306,7 +306,6 @@ def main():
     tabla = juego.tabla
     ia = juego.ia
 
-
     #! --- mainloop ---
 
     while True:
@@ -373,4 +372,3 @@ def main():
             
         pygame.display.update()
 
-main()

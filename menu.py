@@ -1,7 +1,8 @@
 import pygame
+import tictactoe as tc
 
-ANCHO = 800
-ALTO = 500
+ANCHO = 600
+ALTO = 600
 
 pantalla = pygame.display.set_mode((ANCHO,ALTO))
 
@@ -10,6 +11,7 @@ pantalla = pygame.display.set_mode((ANCHO,ALTO))
 imagenX10 = pygame.image.load('button_10x10.png').convert_alpha()
 imagenX3 = pygame.image.load('button_3x3.png').convert_alpha()
 imagenSalir = pygame.image.load('button_salir.png').convert_alpha()
+imgTitulo = pygame.image.load('button_tic-tac-toe.png').convert_alpha()
 
 #clase boton
 class boton:
@@ -50,9 +52,10 @@ class boton:
     
 # creamos las instanacias de los botones
 
-botonX3 = boton(150,280,imagenX3, 0.75)
-botonX10 = boton(320,280,imagenX10, 0.57)
-botonSalir = boton(500,280,imagenSalir, 0.55)
+botonX3 = boton(100,300,imagenX3, 0.75)
+botonX10 = boton(250,300,imagenX10, 0.57)
+botonSalir = boton(420,300,imagenSalir, 0.55)
+botonTitulo = boton(190,100,imgTitulo, 1)
 
 # main loop
 
@@ -62,9 +65,14 @@ while run:
     
     pantalla.fill((0, 158, 255))
     
+    botonTitulo.dibujar()
     
     if botonX3.dibujar():
         print('botonX3')
+        tc.main()
+        
+        
+        
     if botonSalir.dibujar():
         print('botonSalir')
         run = False

@@ -21,7 +21,7 @@ BORDE = 50 # default 50
 
 # --- Colores ---
 
-FONDO = (28, 170, 156)
-COLOR_LINEA = (23, 145, 135)
+FONDO = (0, 158, 255)
+COLOR_LINEA = (79, 104, 127)
 COLOR_CIRC = (239, 231, 200)
 COLOR_EQUIS = (66, 66, 66)
