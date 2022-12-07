@@ -1,5 +1,6 @@
 import pygame
 import tictactoe as tc
+import tablero as tb
 
 ANCHO = 600
 ALTO = 600
@@ -78,6 +79,7 @@ while run:
         run = False
     if botonX10.dibujar():
         print('botonX10')
+        tb.main10()
     
     # eventos
     
