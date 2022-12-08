@@ -11,11 +11,11 @@ FILAS = 10
 COLS = 10
 SIZE_CUADROS = ANCHURA // COLS # default ANCHURA // COLS      600//4 = 200      # * 60
 
-ANCHURA_LINEA = 10 # default 15
-ANCHURA_CIRC = 5 # default 15
-ANCHURA_EQUIS = 20 # default 20
+ANCHURA_LINEA = 5 # default 15
+ANCHURA_CIRC = 6 # default 15
+ANCHURA_EQUIS = 13 # default 20
 
-RADIO = SIZE_CUADROS // 4 # default SIZE_CUADROS // 4    200//4 = 50             # * 15
+RADIO = (SIZE_CUADROS // 4)+5 # default SIZE_CUADROS // 4    200//4 = 50             # * 15
 
 BORDE = 10 # default 50
 

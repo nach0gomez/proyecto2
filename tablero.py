@@ -119,7 +119,7 @@ class ia:
 
     # * el parametro de modo es el que nos define si la ia esta retornando las posiciones en modo random
     # * o lo esta haciendo aplicando minimax
-    def __init__(self, modo=1, jugador=2):
+    def __init__(self, modo=0, jugador=2):
         self.modo = modo
         self.jugador = jugador
 
@@ -252,26 +252,13 @@ class Juego:
         ventana.fill( FONDO )
 
         # * lineas verticales
-        pygame.draw.line(ventana, COLOR_LINEA, (SIZE_CUADROS, 0), (SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (ANCHURA - SIZE_CUADROS, 0), (ANCHURA - SIZE_CUADROS, ALTURA), ANCHURA_LINEA)
+        for i in range(9):
+            pygame.draw.line(ventana, COLOR_LINEA, (SIZE_CUADROS*(i+1), 0), (SIZE_CUADROS*(i+1), ALTURA), ANCHURA_LINEA)
+        
 
         # * lineas horizontales
-        pygame.draw.line(ventana, COLOR_LINEA, (0, SIZE_CUADROS), (ANCHURA, SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
-        pygame.draw.line(ventana, COLOR_LINEA, (0, ALTURA - SIZE_CUADROS), (ANCHURA, ALTURA - SIZE_CUADROS), ANCHURA_LINEA)
+        for i in range(9):
+            pygame.draw.line(ventana, COLOR_LINEA, (0, SIZE_CUADROS*(i+1)), (ANCHURA, SIZE_CUADROS*(i+1)), ANCHURA_LINEA)
 
     # * metodo que usamos para dibujar las figuras del circulo y la equis de cada jugador
     def dibujarFiguras(self, fila, col):
@@ -398,5 +385,4 @@ def main10():
                 juego.ejecutando = False
             
         pygame.display.update()
-    
-main10()
+
