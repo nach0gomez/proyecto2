@@ -43,13 +43,16 @@ class tabla:
         # comparaciones verticales
         for col in range(COLS):
             for i in range(FILAS-2):
+                print(f'{self.posiciones[col][i]} es la casilla actual')
                 if self.posiciones[i][col] == self.posiciones[i+1][col] == self.posiciones[i+2][col] != 0:
+                    print(self.posiciones[i][col])
                     if mostrar:
                         color = COLOR_CIRC if self.posiciones[i][col] == 2 else COLOR_EQUIS
                         posInicio = (col * SIZE_CUADROS + SIZE_CUADROS // 2, 20)
                         posFin = (col * SIZE_CUADROS + SIZE_CUADROS // 2, ALTURA - 20)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_LINEA)
-                return self.posiciones[i][col]
+                        print(self.posiciones[i][col])
+                    return self.posiciones[i][col]
 
         #* victorias de manera horizontal
         
@@ -57,12 +60,14 @@ class tabla:
         for col in range(COLS-2):
             for i in range(FILAS):
                 if self.posiciones[i][col] == self.posiciones[i][col+1] == self.posiciones[i][col+2] != 0:
+                    print(self.posiciones[i][col])
                     if mostrar:
                         color = COLOR_CIRC if self.posiciones[i][col] == 2 else COLOR_EQUIS
                         posInicio = (20, i * SIZE_CUADROS + SIZE_CUADROS // 2)
                         posFin = (ANCHURA - 20, i * SIZE_CUADROS + SIZE_CUADROS // 2)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_LINEA)
-                return self.posiciones[i][col]
+                        print(self.posiciones[i][col])
+                    return self.posiciones[i][col]
         
         
         
@@ -75,6 +80,7 @@ class tabla:
                         posInicio = (20, 20)
                         posFin = (ANCHURA - 20, ALTURA - 20)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_EQUIS)
+                        print(self.posiciones[i][col])
                     return self.posiciones[i][col]
                 
         
@@ -82,11 +88,13 @@ class tabla:
         for i in range(8):   #rows-2):
             for col in range(8):    #(cols-2):
                 if self.posiciones[i+2][col] == self.posiciones[i+1][col+1] == self.posiciones[i][col+2] != 0:
+                    
                     if mostrar:
                         color = COLOR_CIRC if self.posiciones[i+1][col+1] == 2 else COLOR_EQUIS
                         posInicio = (20, ALTURA - 20)
                         posFin = (ANCHURA - 20, 20)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_EQUIS)
+                        print(self.posiciones[i][col])
                     return self.posiciones[i+1][col+1]
 
 
@@ -262,6 +270,7 @@ class Juego:
 
     # * metodo que usamos para dibujar las figuras del circulo y la equis de cada jugador
     def dibujarFiguras(self, fila, col):
+        print(self.tabla.posiciones)
         if self.jugador == 1:
             # * dibujar equis
             # * linea descendente
@@ -306,6 +315,7 @@ class Juego:
     # * verificamos si el tablero esta lleno o si ya hay un ganador, por eso debe ser distinto de 0
     # * le ponemos el parametro de True para que si hay ganador, lo checkee con la linea que indique la victoria
     def terminoJuego(self):
+        
         return self.tabla.verificarGanador(mostrar=True) != 0 or self.tabla.estaLleno()
 
     # * cada que se resetea, se inicia de nuevo el constructor para settear todo a su valor por defecto y comenzar de nuevo
@@ -386,3 +396,4 @@ def main10():
             
         pygame.display.update()
 
+main10()
