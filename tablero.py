@@ -89,6 +89,7 @@ class tabla:
                 
         
         # comparaciones ascendentes
+        
         for i in range(8):   #rows-2):
             for col in range(8):    #(cols-2):
                 if self.posiciones[i+2][col] == self.posiciones[i+1][col+1] == self.posiciones[i][col+2] != 0:
@@ -399,4 +400,3 @@ def main10():
             
         pygame.display.update()
 
-main10()
