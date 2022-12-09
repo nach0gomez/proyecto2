@@ -90,16 +90,17 @@ class tabla:
         
         # comparaciones ascendentes
         
-        for i in range(8):   #rows-2):
-            for col in range(8):    #(cols-2):
-                if self.posiciones[i+2][col] == self.posiciones[i+1][col+1] == self.posiciones[i][col+2] != 0:
+        for col in range(8):   #rows-2):
+            for i in range(8):    #(cols-2):
+                if self.posiciones[col+2][i] == self.posiciones[col+1][i+1] == self.posiciones[col][i+2] != 0:
                     if mostrar:
-                        color = COLOR_CIRC if self.posiciones[i+1][col+1] == 2 else COLOR_EQUIS
-                        posInicio = (20, ALTURA - 20)
-                        posFin = (ANCHURA - 20, 20)
+                        color = COLOR_CIRC if self.posiciones[col+1][i+1] == 2 else COLOR_EQUIS
+                        
+                        posInicio = ( i* SIZE_CUADROS + (SIZE_CUADROS // 2), col * SIZE_CUADROS + 5*(SIZE_CUADROS // 2))
+                        posFin = ((i+2)* SIZE_CUADROS + (SIZE_CUADROS // 2),  col * SIZE_CUADROS + SIZE_CUADROS // 2)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_EQUIS)
                         #print(self.posiciones[i][col])
-                    return self.posiciones[i+1][col+1]
+                    return self.posiciones[col+1][i+1]
 
 
         # * no hay victoria aun (no significa empate)

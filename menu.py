@@ -13,6 +13,10 @@ imagenX10 = pygame.image.load('button_10x10.png').convert_alpha()
 imagenX3 = pygame.image.load('button_3x3.png').convert_alpha()
 imagenSalir = pygame.image.load('button_salir.png').convert_alpha()
 imgTitulo = pygame.image.load('button_tic-tac-toe.png').convert_alpha()
+imgControles = pygame.image.load('button_controles.png').convert_alpha()
+imgCambiarModo = pygame.image.load('button_g-cambiar-modo.png').convert_alpha()
+imgReiniciar = pygame.image.load('button_r-reiniciar.png').convert_alpha()
+
 
 #clase boton
 class boton:
@@ -58,6 +62,10 @@ botonX10 = boton(250,300,imagenX10, 0.57)
 botonSalir = boton(420,300,imagenSalir, 0.55)
 botonTitulo = boton(190,100,imgTitulo, 1)
 
+botonControles= boton(90,400,imgControles, 0.6)
+botonReiniciar = boton(200,400,imgReiniciar, 0.6)
+botonCambiarModo = boton(350,400,imgCambiarModo, 0.6)
+
 # main loop
 
 run = True
@@ -67,6 +75,9 @@ while run:
     pantalla.fill((0, 158, 255))
     
     botonTitulo.dibujar()
+    botonControles.dibujar()
+    botonReiniciar.dibujar()
+    botonCambiarModo.dibujar()
     
     if botonX3.dibujar():
         print('botonX3')
