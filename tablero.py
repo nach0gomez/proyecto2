@@ -73,14 +73,16 @@ class tabla:
         
         
         # comparaciones descendentes
-        #TODO check the draw line
+        
         for col in range(COLS-2):
-            for i in range(FILAS-2):
+            for i in range(FILAS-2): #SIZE_CUADROS = 60
                 if self.posiciones[i][col] == self.posiciones[i+1][col+1] == self.posiciones[i+2][col+2] != 0:
                     if mostrar:
                         color = COLOR_CIRC if self.posiciones[i+1][col+1] == 2 else COLOR_EQUIS
-                        posInicio =( col* SIZE_CUADROS + 5.7*(SIZE_CUADROS // 2), i * SIZE_CUADROS + SIZE_CUADROS // 2)
-                        posFin = (col* SIZE_CUADROS + 5.7*(SIZE_CUADROS // 2)-20, col+2 * SIZE_CUADROS + SIZE_CUADROS // 2)
+                        
+                        posInicio =( col* SIZE_CUADROS + (SIZE_CUADROS // 2), i * SIZE_CUADROS + SIZE_CUADROS // 2)
+                        posFin =( col* SIZE_CUADROS + 5.7*(SIZE_CUADROS // 2),  i * SIZE_CUADROS + 5.7*SIZE_CUADROS // 2)
+                        #posFin = (col* SIZE_CUADROS + 5.7*(SIZE_CUADROS // 2)-20, col+2 * SIZE_CUADROS + SIZE_CUADROS // 2)
                         pygame.draw.line(ventana, color, posInicio, posFin, ANCHURA_EQUIS)
                         #print(self.posiciones[i][col])
                     return self.posiciones[i][col]
